@@ -1,0 +1,31 @@
+%h1 Listing page_categories
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Slug
+    %th Published
+    %th Meta title
+    %th Meta description
+    %th Meta keywords
+    %th
+    %th
+    %th
+
+  - @page_categories.each do |page_category|
+    %tr
+      %td= page_category.name
+      %td= page_category.description
+      %td= page_category.slug
+      %td= page_category.published
+      %td= page_category.meta_title
+      %td= page_category.meta_description
+      %td= page_category.meta_keywords
+      %td= link_to 'Show', page_category
+      %td= link_to 'Edit', edit_page_category_path(page_category)
+      %td= link_to 'Destroy', page_category, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Page category', new_page_category_path
