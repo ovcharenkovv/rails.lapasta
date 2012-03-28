@@ -25,8 +25,11 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'haml', '3.1.4'
 gem 'activeadmin'
-
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'ckeditor', '3.7.0.rc3'
+gem 'formtastic'
+gem 'paperclip'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
