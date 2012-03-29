@@ -14,6 +14,5 @@
 /log/*.log
 /tmp
 .idea/*
-/images/assets/*
-/system/*
+/public/system/*
 
