@@ -8,10 +8,10 @@
   = @page.title
 %p
   %b Short body:
-  = @page.short_body
+  =raw @page.short_body
 %p
   %b Body:
-  = @page.body
+  =raw @page.body
 %p
   %b Meta title:
   = @page.meta_title
@@ -28,6 +28,6 @@
   %b Slug:
   = @page.slug
 
-= link_to 'Edit', edit_page_path(@page)
-\|
-= link_to 'Back', pages_path
+-#= link_to 'Edit', edit_page_path(@page)
+-#\|
+-#= link_to 'Back', pages_path

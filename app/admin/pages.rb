@@ -1,4 +1,4 @@
 ActiveAdmin.register Page do
-  form :partial => "pages/admin_form"
+  form :partial => "admin/pages/form"
   
 end

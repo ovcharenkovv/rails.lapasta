@@ -3,4 +3,5 @@ class Page < ActiveRecord::Base
   validates :slug, :presence => true,
             :uniqueness => true
   validates :page_category_id, :presence => true
+  validates :title, :presence => true
 end
