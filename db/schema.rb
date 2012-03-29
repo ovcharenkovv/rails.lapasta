@@ -62,28 +62,28 @@ ActiveRecord::Schema.define(:version => 20120328235537) do
 
   create_table "page_categories", :force => true do |t|
     t.string   "name"
-    t.text     "description"
     t.string   "slug"
-    t.boolean  "published"
+    t.text     "description"
+    t.boolean  "published",        :default => true
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "pages", :force => true do |t|
-    t.boolean  "published"
+    t.boolean  "published",        :default => true
     t.string   "title"
+    t.string   "slug"
     t.text     "short_body"
     t.text     "body"
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
     t.integer  "page_category_id"
-    t.string   "slug"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "pages", ["page_category_id"], :name => "index_pages_on_page_category_id"

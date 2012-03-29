@@ -7,9 +7,14 @@ Lapasta::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :page_categories do
-    resources :pages
-  end
+  #resources :page_categories do
+  #  resources :pages
+  #end
+
+  match '/:page_category_slug/:page_slug' => 'pages#show', :as => :short_post
+  match '/:page_category_slug' => 'pages#index', :as => :short_category_page
+
+  root :to => 'page_categories#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

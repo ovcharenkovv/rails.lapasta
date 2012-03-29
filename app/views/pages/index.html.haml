@@ -2,34 +2,10 @@
 
 %table
   %tr
-    %th Published
     %th Title
     %th Short body
-    %th Body
-    %th Meta title
-    %th Meta description
-    %th Meta keywords
-    %th Page category
-    %th Slug
-    %th
-    %th
-    %th
 
   - @pages.each do |page|
     %tr
-      %td= page.published
-      %td= page.title
-      %td= page.short_body
-      %td= page.body
-      %td= page.meta_title
-      %td= page.meta_description
-      %td= page.meta_keywords
-      %td= page.page_category_id
-      %td= page.slug
--#      %td= link_to 'Show', page
--#      %td= link_to 'Edit', edit_page_path(page)
--#      %td= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete
--#
--#%br
--#
--#= link_to 'New Page', new_page_category_page_path
+      %td= link_to page.title, short_post_url(@page_category.slug,page.slug)
+      %td=raw page.short_body
