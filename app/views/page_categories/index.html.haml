@@ -7,9 +7,6 @@
     %th Description
     %th Slug
     %th Published
-    %th Meta title
-    %th Meta description
-    %th Meta keywords
 
   - @page_categories.each do |page_category|
     %tr
@@ -18,6 +15,3 @@
       %td= page_category.description
       %td= page_category.slug
       %td= page_category.published
-      %td= page_category.meta_title
-      %td= page_category.meta_description
-      %td= page_category.meta_keywords
