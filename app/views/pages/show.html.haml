@@ -1,33 +1,4 @@
-%p#notice= notice
-
-%p
-  %b Published:
-  = @page.published
-%p
-  %b Title:
+- content_for :page_title do
   = @page.title
-%p
-  %b Short body:
-  =raw @page.short_body
-%p
-  %b Body:
-  =raw @page.body
-%p
-  %b Meta title:
-  = @page.meta_title
-%p
-  %b Meta description:
-  = @page.meta_description
-%p
-  %b Meta keywords:
-  = @page.meta_keywords
-%p
-  %b Page category:
-  = @page.page_category_id
-%p
-  %b Slug:
-  = @page.slug
 
--#= link_to 'Edit', edit_page_path(@page)
--#\|
--#= link_to 'Back', pages_path
+=raw @page.body

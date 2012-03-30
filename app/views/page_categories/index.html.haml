@@ -1,17 +1,6 @@
-%h1 Listing page_categories
+- content_for :page_title do
+  Скисок категорий контента
 
-%table
-  %tr
-    %th SLUG
-    %th Name
-    %th Description
-    %th Slug
-    %th Published
-
+%ul
   - @page_categories.each do |page_category|
-    %tr
-      %td= link_to page_category.slug, short_category_page_url(page_category.slug)
-      %td= page_category.name
-      %td= page_category.description
-      %td= page_category.slug
-      %td= page_category.published
+    %li= link_to page_category.name, short_category_page_url(page_category.slug)

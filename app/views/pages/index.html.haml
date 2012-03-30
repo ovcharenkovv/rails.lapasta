@@ -1,11 +1,8 @@
-%h1 Listing pages
+- content_for :page_title do
+  Скисок статей в категории
 
-%table
-  %tr
-    %th Title
-    %th Short body
-
-  - @pages.each do |page|
-    %tr
-      %td= link_to page.title, short_post_url(@page_category.slug,page.slug)
-      %td=raw page.short_body
+- @pages.each do |page|
+  %h3= link_to page.title, short_post_url(@page_category.slug,page.slug)
+  .post_body=raw page.short_body
+  %br
+  %p= link_to 'Читать дальше >>', short_post_url(@page_category.slug,page.slug)
