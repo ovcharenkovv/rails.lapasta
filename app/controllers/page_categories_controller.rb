@@ -3,7 +3,7 @@ class PageCategoriesController < ApplicationController
   # GET /page_categories
   # GET /page_categories.json
   def index
-    @page_categories = PageCategory.all
+    @page_categories = PageCategory.where(:published=>true)
 
     respond_to do |format|
       format.html # index.html.erb
