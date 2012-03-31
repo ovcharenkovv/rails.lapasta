@@ -3,8 +3,9 @@
   = f.inputs :name => "inputs" do
     = f.input :published
     = f.input :page_category
-    = f.input :slug
     = f.input :title
+    -#- if params[:action] == 'edit'
+    -#  = f.input :slug
     = f.input :short_body, :as => :ckeditor, :input_html => { :height => 200 }
     = f.input :body, :as => :ckeditor, :input_html => { :height => 400 }
     = f.input :meta_title

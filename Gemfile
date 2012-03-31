@@ -29,6 +29,7 @@ gem 'meta_search', '>= 1.1.0.pre'
 gem 'ckeditor', '3.7.0.rc3'
 gem 'formtastic'
 gem 'paperclip'
+gem 'unidecoder'
 
 
 # To use ActiveModel has_secure_password

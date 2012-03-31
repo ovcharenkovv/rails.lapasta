@@ -1,4 +1,7 @@
 - content_for :page_title do
   = @page.title
 
+%h2
+  =@page.title.to_ascii.parameterize
+
 =raw @page.body
