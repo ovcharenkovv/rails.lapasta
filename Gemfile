@@ -30,6 +30,10 @@ gem 'ckeditor', '3.7.0.rc3'
 gem 'formtastic'
 gem 'paperclip'
 gem 'unidecoder'
+gem 'awesome_nested_set'
+
+#plugin 'acts_as_category', :git => 'git://github.com/funkensturm/acts_as_category.git'
+#gem 'acts_as_category'
 
 
 # To use ActiveModel has_secure_password

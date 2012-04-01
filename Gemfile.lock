@@ -40,6 +40,8 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    awesome_nested_set (2.1.2)
+      activerecord (>= 3.0.0)
     bcrypt-ruby (3.0.1)
     bourbon (1.4.0)
       sass (>= 3.1)
@@ -162,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  awesome_nested_set
   ckeditor (= 3.7.0.rc3)
   coffee-rails (~> 3.2.1)
   formtastic

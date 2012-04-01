@@ -1,0 +1,9 @@
+= semantic_form_for [:admin, @category] do |f|
+  = f.inputs :name => "inputs" do
+    = f.input :published
+    = f.input :name
+    = f.input :position
+    = f.input :parent_id, :as => :select, :collection => Category.all(:order => "name") ,  :include_blank => true
+
+    = f.input :description, :as => :ckeditor, :input_html => { :height => 200 }
+  = f.buttons

@@ -1,6 +1,8 @@
 Lapasta::Application.routes.draw do
 
 
+  resources :categories
+
   mount Ckeditor::Engine => '/ckeditor'
 
   ActiveAdmin.routes(self)

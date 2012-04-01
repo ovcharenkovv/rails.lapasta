@@ -6,8 +6,8 @@ ActiveAdmin.register PageCategory do
   form :partial => "admin/page_categories/form"
 
   index do
-    column :published
     column :name
+    column :published
     column :description
     default_actions
   end

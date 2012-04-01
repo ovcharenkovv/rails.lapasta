@@ -2,8 +2,8 @@
 = semantic_form_for [:admin, @page] do |f|
   = f.inputs :name => "inputs" do
     = f.input :published
-    = f.input :page_category
     = f.input :title
+    = f.input :page_category
     -#- if params[:action] == 'edit'
     -#  = f.input :slug
     = f.input :short_body, :as => :ckeditor, :input_html => { :height => 200 }
