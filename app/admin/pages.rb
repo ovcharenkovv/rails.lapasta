@@ -1,4 +1,5 @@
 ActiveAdmin.register Page do
+  menu :parent => "CMS"
 
   filter :parent_id
   filter :title

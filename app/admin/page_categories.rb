@@ -1,4 +1,6 @@
 ActiveAdmin.register PageCategory do
+  menu :parent => "CMS"
+
   filter :name
   filter :description
 

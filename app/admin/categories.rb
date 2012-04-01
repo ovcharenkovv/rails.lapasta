@@ -1,4 +1,5 @@
 ActiveAdmin.register Category do
+  menu :priority => 20
 
   filter :name
 
