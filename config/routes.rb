@@ -1,9 +1,13 @@
 Lapasta::Application.routes.draw do
 
+  resources :categories do
+    resources :products
+  end
 
-  resources :suppliers
+  resources :suppliers do
+    resources :products
+  end
 
-  resources :categories
 
   mount Ckeditor::Engine => '/ckeditor'
 
