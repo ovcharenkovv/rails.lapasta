@@ -7,7 +7,7 @@ class PageCategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @page_categories }
+      format.json { render json=> @page_categories }
     end
   end
   #
