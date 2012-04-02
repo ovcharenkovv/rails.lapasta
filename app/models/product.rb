@@ -9,5 +9,8 @@ class Product < ActiveRecord::Base
 
   validates :title, :category_id,:price, :presence => true
 
+  def first_attache_url style
+    "/system/attachments/#{self.id}/#{style}_#{self.attachments.first.attachment_file_name}"
+  end
 
 end

@@ -5,4 +5,9 @@ class Attachment < ActiveRecord::Base
                     :url  => "/system/attachments/:id/:style_:basename.:extension",
                     :path => ":rails_root/public/system/attachments/:id/:style_:basename.:extension",
 	                  :styles => { :thumb=> "100x100#", :small  => "300x300>", :large => "600x600>" }
+
+  def attachment_url style
+    "/system/attachments/#{self.id}/#{style}_#{self.attachment_file_name}"
+  end
+
 end

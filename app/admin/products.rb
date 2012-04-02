@@ -3,27 +3,41 @@ ActiveAdmin.register Product do
   form :partial => "admin/products/form"
 
   index do
+    column "Images" do |product|
+      link_to image_tag(product.first_attache_url(:thumb)), admin_product_path(product)
+    end
     column :published
     column :title
     column :price
     column :supplier_price
-    column :description
-    default_actions
+    #column :description
+    #default_actions
   end
 
   show do |product|
     attributes_table do
+      row :id
+      row :published
       row :title
-      row :attachments do
-        product.attachments.first
-      end
+      row :price
+      row :supplier_price
+      row :supplier
+      row :category
+      row :status
+      row :description
     end
     active_admin_comments
 
   end
 
-  #index :as => :grid, :columns => 4 do |product|
-  #  product.attachments.first.url
+  sidebar :pictures,:only => :show, :partial => "sidebar"
+
+
+
+  #sidebar :pictures do
+  #  product.attachments.each do |att|
+  #    att.inspect
+  #  end
   #end
 
   controller do
