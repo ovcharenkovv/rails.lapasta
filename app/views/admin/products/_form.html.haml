@@ -1,0 +1,24 @@
+-#= javascript_include_tag "/javascripts/ckeditor/ckeditor.js"
+= semantic_form_for [:admin, @product], :html => { :multipart => true }  do |f|
+  = f.inputs :name => "inputs" do
+    = f.input :published
+    = f.input :category
+    = f.input :supplier
+    = f.input :title
+    = f.input :price
+    = f.input :supplier_price
+    = f.input :status
+    = f.input :description, :as => :ckeditor, :input_html => { :height => 400 }
+
+    =f.fields_for :attachments do |attachment_fields|
+      - if attachment_fields.object.new_record?
+        %p
+          =attachment_fields.file_field :attachment
+
+    = f.fields_for :attachments do |attachment_fields|
+      - unless attachment_fields.object.new_record?
+        .thumb
+          = link_to image_tag(attachment_fields.object.attachment.url(:thumb)), attachment_fields.object.attachment.url(:original)
+          = attachment_fields.check_box :_destroy
+
+  = f.buttons

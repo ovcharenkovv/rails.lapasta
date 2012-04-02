@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120401203754) do
+ActiveRecord::Schema.define(:version => 20120402090712) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,8 +46,20 @@ ActiveRecord::Schema.define(:version => 20120401203754) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "attachments", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "attachments", ["product_id"], :name => "index_attachments_on_product_id"
+
   create_table "categories", :force => true do |t|
-    t.boolean  "published"
+    t.boolean  "published",   :default => true
     t.string   "name"
     t.text     "description"
     t.integer  "parent_id"
@@ -55,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20120401203754) do
     t.integer  "rgt"
     t.integer  "depth"
     t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -75,26 +87,26 @@ ActiveRecord::Schema.define(:version => 20120401203754) do
 
   create_table "page_categories", :force => true do |t|
     t.string   "name"
+    t.string   "slug"
     t.text     "description"
-    t.string   "slug",             :default => "1"
-    t.boolean  "published"
+    t.boolean  "published",        :default => true
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "pages", :force => true do |t|
     t.boolean  "published",        :default => true
     t.string   "title"
+    t.string   "slug"
     t.text     "short_body"
     t.text     "body"
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
     t.integer  "page_category_id"
-    t.string   "slug"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end
@@ -102,7 +114,7 @@ ActiveRecord::Schema.define(:version => 20120401203754) do
   add_index "pages", ["page_category_id"], :name => "index_pages_on_page_category_id"
 
   create_table "products", :force => true do |t|
-    t.boolean  "published"
+    t.boolean  "published",                                     :default => true
     t.string   "title"
     t.decimal  "price",          :precision => 10, :scale => 0
     t.decimal  "supplier_price", :precision => 10, :scale => 0
@@ -110,8 +122,8 @@ ActiveRecord::Schema.define(:version => 20120401203754) do
     t.integer  "category_id"
     t.string   "status"
     t.text     "description"
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
