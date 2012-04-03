@@ -4,7 +4,15 @@ ActiveAdmin.register Product do
 
   index do
     column "Images" do |product|
-      link_to image_tag(product.first_attache_url(:thumb)), admin_product_path(product)
+
+        link_to (admin_product_path(product)) do
+          if !product.attachments.first.nil?
+            image_tag(product.first_attache_url(:thumb))
+          else
+            product.id
+          end
+        end
+
     end
     column :published
     column :title
