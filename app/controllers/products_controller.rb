@@ -3,17 +3,11 @@ class ProductsController < InheritedResources::Base
   before_filter :get_category_or_author
 
   def get_category_or_author
-    if params[:category_id]
-      @category = Category.find(params[:category_id])
-      @categories = @category.children
-      if @categories.count == 0
-        @categories = @category
-      end
-    end
+    @category = Category.find(params[:category_id])
   end
 
   def index
-      @products = Product.where(:category_id => @categories,:published => true)
+    @products = Product.where(:category_id => @category.id,:published => true)
   end
 
   def show

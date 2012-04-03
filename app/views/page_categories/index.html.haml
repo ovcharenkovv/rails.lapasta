@@ -1,6 +1,7 @@
 - content_for :page_title do
   Скисок категорий контента
 
-%ul
-  - @page_categories.each do |page_category|
-    %li= link_to page_category.name, short_category_page_url(page_category.slug)
+.content.info-page
+  %ul
+    - @page_categories.each do |page_category|
+      %li= link_to page_category.name, short_category_page_url(page_category.slug)

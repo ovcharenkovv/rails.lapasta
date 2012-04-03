@@ -1,15 +1,23 @@
-.box
-  .box-content.box-category
+-if params[:controller]=='products'
+  .box
     %h3.heading-title
-      %span Информация
-    %ul
-      %li
-        %a{:href => ""} О нас
-      %li
-        %a{:href => ""} Доставка
-      %li
-        %a{:href => ""} Оплата
-      %li
-        %a{:href => ""} На связи
-      %li
-        %a{:href => ""} Карта сайта
+      %span Категории
+    .box-content.box-category
+      = render "categories/list"
+
+-else
+  .box
+    .box-content.box-category
+      %h3.heading-title
+        %span Информация
+      %ul
+        %li
+          %a{:href => ""} О нас
+        %li
+          %a{:href => ""} Доставка
+        %li
+          %a{:href => ""} Оплата
+        %li
+          %a{:href => ""} На связи
+        %li
+          %a{:href => ""} Карта сайта

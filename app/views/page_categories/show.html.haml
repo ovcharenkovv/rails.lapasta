@@ -1,30 +1,31 @@
-%p#notice= notice
+.content.info-page
+  %p#notice= notice
 
-%p
-  %b Name:
-  = @page_category.name
-%p
-  %b Description:
-  = @page_category.description
-%p
-  %b Slug:
-  = @page_category.slug
-%p
-  %b Published:
-  = @page_category.published
-%p
-  %b Meta title:
-  = @page_category.meta_title
-%p
-  %b Meta description:
-  = @page_category.meta_description
-%p
-  %b Meta keywords:
-  = @page_category.meta_keywords
+  %p
+    %b Name:
+    = @page_category.name
+  %p
+    %b Description:
+    = @page_category.description
+  %p
+    %b Slug:
+    = @page_category.slug
+  %p
+    %b Published:
+    = @page_category.published
+  %p
+    %b Meta title:
+    = @page_category.meta_title
+  %p
+    %b Meta description:
+    = @page_category.meta_description
+  %p
+    %b Meta keywords:
+    = @page_category.meta_keywords
 
-= link_to 'Back', page_categories_path
-%br
-%br
--#= link_to 'Page Category Posts', page_category_pages_path
+  = link_to 'Back', page_categories_path
+  %br
+  %br
+  -#= link_to 'Page Category Posts', page_category_pages_path
 
 
