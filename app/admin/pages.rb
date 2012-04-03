@@ -1,14 +1,13 @@
 ActiveAdmin.register Page do
-  menu :parent => "CMS"
 
-  filter :parent_id
+  filter :page_category
   filter :title
 
   form :partial => "admin/pages/form"
 
   index do
-    column :title
     column :published
+    column :title
     default_actions
   end
 end

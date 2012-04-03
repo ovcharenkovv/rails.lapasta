@@ -16,6 +16,7 @@ ActiveAdmin.register Product do
     end
     column :published
     column :title
+    column :category
     column :price
     column :supplier_price
     #column :description
