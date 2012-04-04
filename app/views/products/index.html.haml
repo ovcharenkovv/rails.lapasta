@@ -9,7 +9,7 @@
           =image_tag (product.attachments.first.attachment_url(:catalog)),  :alt => product.category.name+' '+product.title, :title => product.title
       .pricetag_small
         %span.old_price='10 Грн.'
-        %span.new_price=product.price.to_s+' Грн.'
+        %span.new_price=product.product_price
       .info_
         %h3= product.title
         =link_to "Купить", category_product_path(product.category,product),:class=>"add_to_cart_small"

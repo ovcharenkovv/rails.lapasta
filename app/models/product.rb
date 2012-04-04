@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :supplier
@@ -11,6 +12,10 @@ class Product < ActiveRecord::Base
 
   def first_attache_url style
     "/system/attachments/#{self.attachments.first.id}/#{style}_#{self.attachments.first.attachment_file_name}"
+  end
+
+  def product_price
+    self.price.to_s+' Грн.'
   end
 
 end

@@ -6,6 +6,7 @@
     = javascript_include_tag "application"
     %link{:href => "http://fonts.googleapis.com/css?family=Lobster", :rel => "stylesheet", :type => "text/css"}/
     = csrf_meta_tags
+    = yield :css_js
   %body
     #container
       #header
@@ -16,10 +17,14 @@
           %h1.heading-title
             %span
               = yield :page_title
-          #column-left
-            = render "layouts/column_left"
-          #content.content-column-left
-            = yield
+          -if params[:action]=='show' && params[:controller]=='products'
+            .product-info.fixed
+              = yield
+          -else
+            #column-left
+              = render "layouts/column_left"
+            #content.content-column-left
+              = yield
       -##pre_footer
       -#  = render "layouts/pre_footer"
       #footer

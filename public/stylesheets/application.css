@@ -1967,15 +1967,19 @@ a.wrap_link {
 }
 .product-info .pricetag {
     background:url(../images/pricetag.png) top left no-repeat;
-    display:block;
-    width:135px;
-    height:89px;
-    position:absolute;
-    top:-3px;
-    right:10px;
-    color:#f5f5f5;
-    text-shadow: #333 1px 1px 1px;
-    z-index:10000;
+    color: #F5F5F5;
+    display: block;
+    font-family: 'Lobster',cursive;
+    font-size: 24px;
+    font-weight: 100;
+    height: 69px;
+    padding-top: 20px;
+    position: absolute;
+    right: 10px;
+    text-shadow: 1px 1px 1px #333333;
+    top: -3px;
+    width: 135px;
+    z-index: 10000;
 }
 .product-info .pricetag .old_price {
     font-size:11px;
@@ -1985,7 +1989,8 @@ a.wrap_link {
     padding:8px 0 0 0;
     display:block;
 }
-.product-info .pricetag .new_price, .product-info .pricetag .promo_price {
+.product-info .pricetag .new_price,
+.product-info .pricetag .promo_price {
     font-family: 'Lobster', cursive;
     color:#f5f5f5;
     font-weight:100;
