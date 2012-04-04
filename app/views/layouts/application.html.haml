@@ -17,7 +17,9 @@
           %h1.heading-title
             %span
               = yield :page_title
-          -if params[:action]=='show' && params[:controller]=='products'
+          -if params[:controller]=='products' && params[:action]=='index'
+            = render "products/product_filter"
+          -if params[:controller]=='products' && params[:action]=='show'
             .product-info.fixed
               = yield
           -else

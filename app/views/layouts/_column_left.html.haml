@@ -4,7 +4,10 @@
       %span Категории
     .box-content.box-category
       = render "categories/list"
-
+  .box
+    %h3.heading-title
+      %span ТОП продаж
+    = render :partial => 'products/bestsellers', :locals =>{ :bestsellers => Product.bestsellers(3) }
 -else
   .box
     .box-content.box-category

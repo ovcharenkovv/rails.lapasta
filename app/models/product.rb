@@ -18,4 +18,8 @@ class Product < ActiveRecord::Base
     self.price.to_s+' Грн.'
   end
 
+  def self.bestsellers limit
+    where(:published => true).limit(limit)
+  end
+
 end

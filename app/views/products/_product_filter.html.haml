@@ -1,0 +1,21 @@
+.product-filter
+  -#.product-compare
+  -#  %a#compare_total{:href => "#"} Product Compare (0)
+  .limit
+    %b Показать:
+    %select
+      %option{:selected => "selected", :value => ""} 8
+      %option{:value => ""} 25
+      %option{:value => ""} 50
+      %option{:value => ""} 75
+      %option{:value => ""} 100
+  .sort
+    %b Сортировать:
+    %select
+      %option{:selected => "selected", :value => ""} По умолчанию
+      %option{:value => ""} Имя (А - Я)
+      %option{:value => ""} Имя (Я - А)
+      %option{:value => ""} Цена (Низкая > Высокая)
+      %option{:value => ""} Цена (Высокая > Низкая)
+      %option{:value => ""} Рейтинг (Возростание)
+      %option{:value => ""} Рейтинг (Убивание)

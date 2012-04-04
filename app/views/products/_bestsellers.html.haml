@@ -1,0 +1,8 @@
+.box-content
+  -bestsellers.each do |product|
+    .product_unit
+      =link_to (category_product_path(product.category,product)),:class=>"image" do
+        =image_tag (product.attachments.first.attachment_url(:thumb)),  :alt => product.category.name+' '+product.title, :title => product.title
+      %span.name=product.title
+      %span.price=product.product_price
+  .clear
