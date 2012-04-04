@@ -1103,6 +1103,17 @@ a.compare_button {
     text-transform:uppercase;
     background: url(../images/divider_small.png) bottom center no-repeat;
 }
+.info_ h3 {
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    color:#D06464;
+    font-size:12px;
+    font-weight:bold;
+    padding-bottom:7px;
+    display:block;
+    text-transform:uppercase;
+    background: url(../images/divider_small.png) bottom center no-repeat;
+    height: 45px;
+}
 .prod_hold a.add_to_cart_small {
     color:#666;
     background-color:#dbdbdb;

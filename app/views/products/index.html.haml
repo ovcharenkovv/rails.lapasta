@@ -10,7 +10,9 @@
       .pricetag_small
         %span.old_price='10 Грн.'
         %span.new_price=product.price.to_s+' Грн.'
-      =link_to "Купить", category_product_path(product.category,product),:class=>"add_to_cart_small"
+      .info_
+        %h3= product.title
+        =link_to "Купить", category_product_path(product.category,product),:class=>"add_to_cart_small"
 
       -#.info{:style => "visibility: hidden;"}
       -#  %h3 Very long product name goes here
