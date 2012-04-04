@@ -1054,7 +1054,7 @@ a.compare_button {
     margin:1px 21px 24px 21px;
 }
 .cat_list .prod_hold {
-    margin: 1px 25px 60px;
+    margin: 0 25px 140px;
 }
 #container_boxed .cat_list .prod_hold {
     margin:1px 22px 20px 21px;
@@ -1113,6 +1113,7 @@ a.compare_button {
     text-transform:uppercase;
     background: url(../images/divider_small.png) bottom center no-repeat;
     height: 45px;
+    margin: 0 0 15px;
 }
 .prod_hold a.add_to_cart_small {
     color:#666;
