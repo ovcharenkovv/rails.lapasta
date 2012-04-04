@@ -22,7 +22,7 @@
     jQuery(document).ready(function() {
       jQuery('#mycarousel').jcarousel({
           vertical: false,
-          visible: 3,
+          visible: 4,
           scroll: 1
           })
     });
@@ -32,19 +32,20 @@
     %a#zoom1.cloud-zoom{:href => @product.attachments.first.attachment_url(:large), :rel => "adjustX: 5, adjustY:0, zoomWidth:550, zoomHeight:400, showTitle: false"}
       %img{:alt => "", :src => @product.attachments.first.attachment_url(:on_show), :title => "Pizza Delicioso"}/
     %span.pricetag=@product.product_price
-  .image-additional
-    .image_car_holder
-      %ul#mycarousel.jcarousel-skin-opencart
-        -@product.attachments.each do |attache|
-          %li
-            %a.cloud-zoom-gallery{:href => attache.attachment_url(:large), :rel => "useZoom: 'zoom1', smallImage: '#{attache.attachment_url(:on_show)}' ", :title => "Thumbnail 1"}
-              =image_tag (attache.attachment_url(:thumb))
+  -if @product.attachments.count > 1
+    .image-additional
+      .image_car_holder
+        %ul#mycarousel.jcarousel-skin-opencart
+          -@product.attachments.each do |attache|
+            %li
+              %a.cloud-zoom-gallery{:href => attache.attachment_url(:large), :rel => "useZoom: 'zoom1', smallImage: '#{attache.attachment_url(:on_show)}' ", :title => "Thumbnail 1"}
+                =image_tag (attache.attachment_url(:thumb))
 .right
   .description
     =raw @product.description
   .options
   .cart
-    %span.label Qty:
+    %span.label Количество:
     %input#qty{:name => "quantity", :size => "2", :type => "text", :value => "1"}
       %a#button-cart.button{:title => "Купить"}
         %span Купить
