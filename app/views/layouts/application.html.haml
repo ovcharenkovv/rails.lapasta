@@ -22,6 +22,8 @@
           -if params[:controller]=='products' && params[:action]=='show'
             .product-info.fixed
               = yield
+            #content
+              = yield :product_content
           -else
             #column-left
               = render "layouts/column_left"

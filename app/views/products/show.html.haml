@@ -24,7 +24,21 @@
           vertical: false,
           visible: 4,
           scroll: 1
-          })
+      });
+
+      jQuery("a.comment_switch").toggle(function(){
+          jQuery(this).addClass("swap");
+          jQuery(".box-rating").fadeOut("fast", function() {
+              jQuery(this).fadeIn("fast").addClass("box-review");
+          });
+      }, function () {
+          jQuery(this).removeClass("swap");
+          jQuery(".box-rating").fadeOut("fast", function() {
+              jQuery(this).fadeIn("fast").removeClass("box-review");
+          });
+      });
+
+
     });
 
 .left
@@ -53,4 +67,8 @@
 
 
 
-
+- content_for :product_content do
+  .box
+    =render :partial => 'reviews'
+  .cat_list
+    =render :partial => 'related_products', :locals =>{ :related_products => Product.related_products(4) }

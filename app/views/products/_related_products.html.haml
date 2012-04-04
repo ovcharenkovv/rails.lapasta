@@ -1,0 +1,5 @@
+%h2.heading-title
+  %span Смотрите также
+-related_products.each do |product|
+  =render :partial => 'product_item', :locals =>{ :product => product }
+.clear
