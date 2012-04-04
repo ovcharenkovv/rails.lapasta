@@ -102,6 +102,7 @@ GEM
     multi_json (1.2.0)
     mysql2 (0.3.11)
     nested_scaffold (0.1.0)
+    newrelic_rpm (3.2.0)
     orm_adapter (0.0.7)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   meta_search (>= 1.1.0.pre)
   mysql2
   nested_scaffold
+  newrelic_rpm
   paperclip
   rails (= 3.2.2)
   sass-rails (~> 3.2.3)

@@ -26,6 +26,7 @@ gem 'formtastic'
 gem 'paperclip'
 gem 'unidecoder'
 gem 'awesome_nested_set'
+gem 'newrelic_rpm'
 
 
 # To use ActiveModel has_secure_password
