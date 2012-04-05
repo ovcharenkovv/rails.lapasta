@@ -4,7 +4,8 @@
     %title Lapasta
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    %link{:href => "http://fonts.googleapis.com/css?family=Lobster", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic", :rel => "stylesheet", :type => "text/css"}/
+
     = csrf_meta_tags
     = yield :css_js
     = render "layouts/google_analytics"
