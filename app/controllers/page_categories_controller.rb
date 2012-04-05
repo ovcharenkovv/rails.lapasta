@@ -1,7 +1,4 @@
-class PageCategoriesController < ApplicationController
-
-  # GET /page_categories
-  # GET /page_categories.json
+class PageCategoriesController < InheritedResources::Base
   def index
     @page_categories = PageCategory.where(:published=>true)
 
@@ -10,9 +7,7 @@ class PageCategoriesController < ApplicationController
       format.json { render json=> @page_categories }
     end
   end
-  #
-  ## GET /page_categories/1
-  ## GET /page_categories/1.json
+
   #def show
   #  @page_category = PageCategory.find(params[:id])
   #
