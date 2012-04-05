@@ -1,4 +1,4 @@
-# encoding: UTF-8
+# -*- encoding : utf-8 -*-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120405130201) do
+ActiveRecord::Schema.define(:version => 20120405132146) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -100,6 +100,23 @@ ActiveRecord::Schema.define(:version => 20120405130201) do
 
   add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
   add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
+
+  create_table "orders", :force => true do |t|
+    t.string   "status"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "pay_type"
+    t.string   "delivery_type"
+    t.decimal  "spent",         :precision => 10, :scale => 0
+    t.text     "note"
+    t.integer  "order_id"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
+
+  add_index "orders", ["order_id"], :name => "index_orders_on_order_id"
 
   create_table "page_categories", :force => true do |t|
     t.string   "name"

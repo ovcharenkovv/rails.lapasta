@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PageCategoriesController < InheritedResources::Base
   def index
     @page_categories = PageCategory.where(:published=>true)

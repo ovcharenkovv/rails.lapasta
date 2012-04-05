@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ProductsController < InheritedResources::Base
   belongs_to :category
   #actions :index, :show

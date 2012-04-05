@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PagesController < InheritedResources::Base
   before_filter :get_category
 

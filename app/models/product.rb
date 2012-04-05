@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
   belongs_to :supplier
   has_many :attachments
   has_many :line_items
+  #has_many :orders, :through => :line_items
+
 
   attr_accessible :title, :category_id, :supplier_id, :published, :price, :supplier_price, :status, :description, :attachments_attributes
 

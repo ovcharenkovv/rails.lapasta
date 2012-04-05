@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Lapasta::Application.routes.draw do
 
   resources :orders

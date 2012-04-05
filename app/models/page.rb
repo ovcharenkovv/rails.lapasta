@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Page < ActiveRecord::Base
   belongs_to :page_category
   validates :slug, :uniqueness => true

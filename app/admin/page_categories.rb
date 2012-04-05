@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 ActiveAdmin.register PageCategory do
   menu :parent => "CMS"
 

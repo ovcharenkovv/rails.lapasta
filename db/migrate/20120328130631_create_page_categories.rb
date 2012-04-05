@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePageCategories < ActiveRecord::Migration
   def change
     create_table :page_categories do |t|
