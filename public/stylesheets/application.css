@@ -784,10 +784,13 @@ table.list .center {
     left:0px;
     padding-top:4px;
     padding-bottom:8px;
-    font-size:28px;
+    font-size:23px;
     background: url(../images/back_price_trans.png) top left repeat;
     width:100%;
     display:block;
+    overflow: hidden;
+    height: 30px;
+
 }
 .roundabout-moveable-item .pricetag {
     background:url(../images/pricetag.png) top left no-repeat;
