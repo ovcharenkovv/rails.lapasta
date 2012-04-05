@@ -30,6 +30,9 @@
                 = yield
               #content
                 = yield :product_content
+            -if params[:controller]=='carts'
+              #content
+                = yield
             -else
               #column-left
                 = render "layouts/column_left"

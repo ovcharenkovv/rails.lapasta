@@ -842,7 +842,8 @@ a.previous_round:hover {
 a.next_round:hover {
     background:url(../images/back_next_prev_round.png) bottom right no-repeat;
 }
-a.button {
+a.button
+{
     background: url("../images/back_button.png") top center no-repeat;
     color: #666;
     font-size:12px;
@@ -861,6 +862,56 @@ a.button {
     -moz-box-shadow: 0px 0px 2px #999;
     -webkit-box-shadow: 0px 0px 2px #999;
 }
+.button-cart
+{
+    background: url("../images/back_button.png") top center no-repeat;
+    color: #666;
+    font-size:12px;
+    font-weight:bold;
+    display: inline-block;
+    height:46px;
+    margin-right: 5px;
+    padding: 0 25px;
+    text-decoration: none;
+    text-transform:uppercase;
+    border: none;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -khtml-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 0px 2px #999;
+    -moz-box-shadow: 0px 0px 2px #999;
+    -webkit-box-shadow: 0px 0px 2px #999;
+    cursor: pointer;
+}
+
+.remove_button {
+    background: url("/images/Remove.png") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-size: 0;
+    height: 32px;
+    margin: 0 5px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    width: 32px;
+
+}
+
+.button-cart:hover {
+    color: #D06464;
+}
+
+.important {
+    color: #D06464;
+    font-weight: bold;
+}
+
+
+
 span.button_comments {
     background: url("../images/back_button.png") top center no-repeat;
     color: #666;

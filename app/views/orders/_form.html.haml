@@ -1,0 +1,15 @@
+= semantic_form_for @order do |f|
+  = f.inputs do
+    = f.input :status
+    = f.input :name
+    = f.input :email
+    = f.input :phone
+    = f.input :address
+    = f.input :pay_type
+    = f.input :delivery_type
+    = f.input :spent
+    = f.input :note
+    = f.input :order_id
+
+  = f.actions do
+    = f.action :submit, :as => :input

@@ -19,6 +19,9 @@ module ApplicationHelper
           ret += separator
           ret += link_to Product.find(param[:id]).title
         end
+      when 'carts'
+        ret += separator
+        ret += link_to "Корзина", cart_url(param[:cart_id])
       else
     end
     ret

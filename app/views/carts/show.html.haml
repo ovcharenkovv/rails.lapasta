@@ -1,0 +1,63 @@
+- content_for :page_title do
+  ="Корзина"
+
+#content
+  .cart-info
+    %table
+      %thead
+        %tr
+          %td.remove Удалить
+          %td.image Изображение
+          %td.name Название
+          %td.quantity Количество
+          %td.price Цена продукта
+          %td.total Общая цена
+      %tbody
+        -@cart.line_items.each do |line_item|
+          %tr{:class=>cycle("even", "odd")}
+            %td.remove
+              = button_to '', line_item_path(line_item), :method => :delete, :confirm => 'Are you sure?', :class=>"remove_button"
+            %td.image
+              =image_tag line_item.product.attachments.first.attachment_url(:thumb)
+            %td.name
+              = link_to(line_item.product.title.to_s,category_product_path(line_item.product.category,line_item.product))
+              =" ( #{line_item.product.category.name} )"
+            %td.quantity
+              %input{:readonly=>"readonly", :name => "quantity", :size => "3", :type => "text", :value => line_item.quantity.to_s}
+            %td.price
+              =line_item.product.price.to_s+" грн."
+            %td.total
+              =line_item.total_price.to_s+" грн."
+  .cart-total
+    %table
+      %tbody
+        -#%tr
+        -#  %td{:colspan => "5"}
+        -#  %td.right
+        -#    %b Sub-Total:
+        -#  %td.right.numbers $701.00
+        %tr
+          %td{:colspan => "5"}
+          %td.right
+            %b Доставка
+          %td.right.numbers 0 Грн.
+        %tr
+          %td{:colspan => "5"}
+          %td.right.numbers_total
+            %b Сумма
+          %td.right.numbers_total
+            =@cart.total_price
+            = "Грн."
+  .buttons
+
+    .left
+      = link_to (@cart.line_items.nil? ? category_products_url(@cart.line_items.last.product.category.id) : root_url), :class=>"button" do
+        %span Продолжить покупки
+    .right
+      = button_to 'Очистить корзину', @cart, :method => :delete, :confirm => 'Вы уверенны что хотите очистить корзину' , :class=>"button-cart"
+    .center
+      = button_to 'Оформить заказ', new_order_path, :class=>"button-cart  important", :method => :get
+
+
+
+

@@ -1,5 +1,11 @@
 Lapasta::Application.routes.draw do
 
+  resources :orders
+
+  resources :line_items
+
+  resources :carts
+
   resources :categories do
     resources :products
   end

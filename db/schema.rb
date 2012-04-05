@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402090712) do
+ActiveRecord::Schema.define(:version => 20120405130201) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(:version => 20120402090712) do
 
   add_index "attachments", ["product_id"], :name => "index_attachments_on_product_id"
 
+  create_table "carts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "categories", :force => true do |t|
     t.boolean  "published",   :default => true
     t.string   "name"
@@ -84,6 +89,17 @@ ActiveRecord::Schema.define(:version => 20120402090712) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.integer  "quantity",   :default => 1
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
+  add_index "line_items", ["product_id"], :name => "index_line_items_on_product_id"
 
   create_table "page_categories", :force => true do |t|
     t.string   "name"
