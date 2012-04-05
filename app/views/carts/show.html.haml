@@ -49,9 +49,8 @@
             =@cart.total_price
             = "Грн."
   .buttons
-
     .left
-      = link_to (@cart.line_items.nil? ? category_products_url(@cart.line_items.last.product.category.id) : root_url), :class=>"button" do
+      = link_to @cart.line_items.count == 0 ? :back : category_products_url(@cart.line_items.last.product.category.id), :class=>"button" do
         %span Продолжить покупки
     .right
       = button_to 'Очистить корзину', @cart, :method => :delete, :confirm => 'Вы уверенны что хотите очистить корзину' , :class=>"button-cart"
