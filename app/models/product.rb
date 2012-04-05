@@ -22,8 +22,21 @@ class Product < ActiveRecord::Base
     where(:published => true).limit(limit)
   end
 
-  def self.related_products limit
+  def self.related limit
     where(:published => true).limit(limit)
   end
+
+  def self.latest limit
+    where(:published => true).limit(limit)
+  end
+
+  def self.featured limit
+    where(:published => true).limit(limit)
+  end
+
+
+
+
+
 
 end

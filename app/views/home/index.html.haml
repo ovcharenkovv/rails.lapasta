@@ -1,0 +1,86 @@
+-content_for :css_js do
+
+  = stylesheet_link_tag    "jq_ui_1_8_9_custom"
+  = stylesheet_link_tag    "carousel"
+  = stylesheet_link_tag    "/javascripts/tipsy/css.tipsy.css"
+  = stylesheet_link_tag    "cloud-zoom"
+
+  = javascript_include_tag "jquery-1.5.2.min.js"
+  = javascript_include_tag "jquery.cycle.lite.1.0.min.js"
+  = javascript_include_tag "custom_scripts"
+  = javascript_include_tag "cloud-zoom.1.0.2.min.js"
+  = javascript_include_tag "/javascripts/jquery.jcarousel.min.js"
+
+  = javascript_include_tag "/javascripts/jquery.roundabout.min.js"
+  = javascript_include_tag "jquery-ui-1.8.9.custom.min.js"
+  = javascript_include_tag "/javascripts/tipsy/jquery.tipsy.js"
+  = javascript_include_tag "tabs"
+
+  :javascript
+    $(document).ready(function() {
+    var interval;
+    $('ul#myRoundabout')
+    .roundabout({
+    'btnNext': '.next_round',
+    'btnPrev': '.previous_round'
+    }
+    )
+    .hover(
+    function() {
+
+    clearInterval(interval);
+    },
+    function() {
+
+    interval = startAutoPlay();
+    });
+
+    interval = startAutoPlay();
+    });
+    function startAutoPlay() {
+    return setInterval(function() {
+    $('ul#myRoundabout').roundabout_animateToPreviousChild();
+    }, 3000);
+    }
+
+
+
+.box.featured-box
+  %h2.heading-title
+    %span Рекомендуемые товары
+  .box-content
+    %ul#myRoundabout
+      -Product.featured(5).each do |product|
+        %li
+          .prod_holder
+            =link_to (category_product_path(product.category,product)) do
+              =image_tag (product.attachments.first.attachment_url(:on_show)),  :alt => product.category.name+' '+product.title, :title => product.title
+              %h3=product.title
+          %span.pricetag=product.product_price
+
+    %a.previous_round{:href => "#"} Приведущий
+    %a.next_round{:href => "#"} Следующий
+
+
+.box
+  %h2.heading-title
+    %span Добро пожаловать
+  .box-content
+    %p Ита́лия (итал. Italia [iˈtaːlja], официальное название — Италья́нская Респу́блика (итал. Repubblica Italiana)) — государство на юге Европы, в центре Средиземноморья. Название произошло из греческого языка, см. Этимология.        Граничит с Францией на северо-западе (протяжённость границы — 488 км), со Швейцарией (740 км) и Австрией (430 км) — на севере и со Словенией — на северо-востоке (232 км). Также имеет внутренние границы с Ватиканом (3,2 км) и Сан-Марино (39 км).        Занимает Апеннинский полуостров, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.
+.box
+  .banner
+    %div
+      %a{:href => "/"}
+        %img{:alt => "", :src => "/images/banner1.jpg"}/
+    %div
+      %a{:href => "/"}
+        %img{:alt => "", :src => "/images/banner2.jpg"}/
+
+.box
+  %h2.heading-title
+    %span Новинки
+  .box-content
+    .box-product.fixed
+      -Product.latest(8).each do |product|
+        =render :partial => 'products/product_item', :locals =>{ :product => product }
+    .clear

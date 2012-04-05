@@ -22,7 +22,7 @@ Lapasta::Application.routes.draw do
   match '/:page_category_slug/:page_slug' => 'pages#show', :as => :short_post
   match '/:page_category_slug' => 'pages#index', :as => :short_category_page
 
-  root :to => 'page_categories#index'
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -15,9 +15,9 @@
   = javascript_include_tag "cloud-zoom.1.0.2.min.js"
   = javascript_include_tag "/javascripts/jquery.jcarousel.min.js"
   = javascript_include_tag "jquery-ui-1.8.9.custom.min.js"
-  = javascript_include_tag "tabs"
   = javascript_include_tag "/javascripts/tipsy/jquery.tipsy.js"
   = javascript_include_tag "tabs"
+
   :javascript
     jQuery(document).ready(function() {
       jQuery('#mycarousel').jcarousel({
@@ -71,4 +71,4 @@
   .box
     =render :partial => 'reviews'
   .cat_list
-    =render :partial => 'related_products', :locals =>{ :related_products => Product.related_products(4) }
+    =render :partial => 'related_products', :locals =>{ :related => Product.related(4) }

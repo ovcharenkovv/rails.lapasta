@@ -1043,9 +1043,7 @@ a.compare_button {
     width: 100%;
 }
 .box-product > div {
-    margin-right: 20px;
-    margin-bottom: 15px;
-}
+    margin: 0 20px 140px;}
 .prod_hold {
     width:194px;
     height:208px;
