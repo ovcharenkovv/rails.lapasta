@@ -9,12 +9,13 @@ class CreateOrders < ActiveRecord::Migration
       t.string :address
       t.string :pay_type
       t.string :delivery_type
+      t.string :shipment_id
+
       t.decimal :spent
       t.text :note
-      t.integer :order_id
 
       t.timestamps
     end
-    add_index :orders, :order_id
   end
 end
+

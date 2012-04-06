@@ -5,7 +5,7 @@
     = f.input :email , :label => "Е-мейл "
     = f.input :address , :label => "Полный почтовый адрес или адрес склада Новой Почты "
     = f.input :pay_type,  :as => :select,      :collection => Order::PAYMENT_TYPES , :prompt => 'Выберите' , :label => "Способ оплаты "
-    = f.input :pay_type,  :as => :select,      :collection => Order::DELIVERY_TYPES, :prompt => 'Выберите' , :label => "Способ доставки "
+    = f.input :delivery_type,  :as => :select,      :collection => Order::DELIVERY_TYPES, :prompt => 'Выберите' , :label => "Способ доставки "
     = f.input :note , :label => "Примечание "
   .buttons
     = f.submit "Заказать" , :class=>"button-cart important submit"
