@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin.register Page do
+  menu :parent => "CMS"
 
   filter :page_category
   filter :title
