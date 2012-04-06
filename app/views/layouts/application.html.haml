@@ -15,33 +15,27 @@
         = render "layouts/header"
       #content_holder
         .inner
-          -if params[:controller]=='home' && params[:action]=='index'
-            #content
-              = yield
-          -else
+          -if params[:controller] != 'home'
             = render "layouts/breadcrumbs"
             %h1.heading-title
               %span
                 = yield :page_title
-            -if params[:controller]=='products' && params[:action]=='index'
-              = render "products/product_filter"
-              #column-left
-                = render "layouts/column_left"
-              #content.content-column-left
-                = yield
-            -if params[:controller]=='products' && params[:action]=='show'
-              .product-info.fixed
-                = yield
-              #content
-                = yield :product_content
-            -if params[:controller]=='carts'
-              #content
-                = yield
-            -if params[:controller]=='pages'
-              #column-left
-                = render "layouts/column_left"
-              #content.content-column-left
-                = yield
+          -if params[:controller]=='products'
+            -case params[:action]
+              -when 'index'
+                = render "products/product_filter"
+                #column-left
+                  = render "layouts/column_left"
+                #content.content-column-left
+                  = yield
+              -when 'show'
+                .product-info.fixed
+                  = yield
+                #content
+                  = yield :product_content
+          -else
+            #content
+              = yield
       -##pre_footer
       -#  = render "layouts/pre_footer"
       #footer
