@@ -1,5 +1,8 @@
-%h1 New order
+- content_for :page_title do
+  ="Оформление заказа"
 
-= render 'form'
+#accordion.checkout
+  .checkout_header Заполните контактную информацию
 
-= link_to 'Back', orders_path
+  %div
+    = render 'form'

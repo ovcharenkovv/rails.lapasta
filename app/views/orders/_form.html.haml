@@ -1,15 +1,11 @@
 = semantic_form_for @order do |f|
   = f.inputs do
-    = f.input :status
-    = f.input :name
-    = f.input :email
-    = f.input :phone
-    = f.input :address
-    = f.input :pay_type
-    = f.input :delivery_type
-    = f.input :spent
-    = f.input :note
-    = f.input :order_id
-
-  = f.actions do
-    = f.action :submit, :as => :input
+    = f.input :name , :label => "Имя Фамилия (для отправки почтой) "
+    = f.input :phone , :label => "Контактный телефон "
+    = f.input :email , :label => "Е-мейл "
+    = f.input :address , :label => "Полный почтовый адрес или адрес склада Новой Почты "
+    = f.input :pay_type,  :as => :select,      :collection => Order::PAYMENT_TYPES , :prompt => 'Выберите' , :label => "Способ оплаты "
+    = f.input :pay_type,  :as => :select,      :collection => Order::DELIVERY_TYPES, :prompt => 'Выберите' , :label => "Способ доставки "
+    = f.input :note , :label => "Примечание "
+  .buttons
+    = f.submit "Заказать" , :class=>"button-cart important submit"

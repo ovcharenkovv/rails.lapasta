@@ -3128,3 +3128,61 @@ img#captcha {
 .addthis_toolbox #___plusone_0 iframe, .addthis_toolbox #___plusone_0, .addthis_toolbox #___plusone_1 iframe, .addthis_toolbox #___plusone_1 {
     width: 75px !important;
 }
+/********************************************* CHECKOUT *****************************************************************/
+#accordion .checkout_header {
+    padding: 10px;
+    text-align: left;
+    background-color: #333333;
+    color:  #ffffff;
+    font: bold 12px "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+#accordion {
+    text-align: left;
+}
+#accordion fieldset {
+    border: none;
+}
+#accordion ol li {
+    margin: 5px 0;
+    list-style-type: none;
+}
+
+#accordion .inputs input,
+#accordion .inputs select
+{
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px;
+    width: 400px;
+    background-color: #ffffff;
+    border-color: #aab2ba;
+}
+#accordion .inputs select {
+    width: 410px;
+}
+#accordion .submit {
+    margin-left: 390px;
+}
+
+
+#accordion .inputs textarea {
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 4px;
+    width: 400px;
+    background-color: #ffffff;
+    border-color: #aab2ba;
+    height: 75px;
+}
+
+#accordion ol li label {
+    color: gray;
+    display: inline-block;
+    float: left;
+    width: 340px;
+
+}
+
+

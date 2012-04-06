@@ -21,8 +21,14 @@ module ApplicationHelper
         end
       when 'carts'
         ret += separator
-        ret += link_to "Корзина", cart_url(param[:cart_id])
+        ret += link_to "Корзина"
+      when 'orders'
+        ret += separator
+        ret += link_to "Корзина", cart_url(session[:cart_id])
+        ret += separator
+        ret += link_to "Оформление заказа"
       else
+
     end
     ret
   end
