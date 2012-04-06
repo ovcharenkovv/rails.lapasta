@@ -2784,13 +2784,13 @@ form#return {
 }
 .banner div {
     text-align: center;
-    width: 100%;
 }
 #content .banner div {
     height:122px;
     float:left;
-    width:auto;
     margin:15px 0 0 20px;
+    width: 430px;
+    position: relative;
 }
 .banner div img {
     margin-bottom: 20px;
@@ -2798,6 +2798,45 @@ form#return {
 img#captcha {
     margin: 15px 0;
 }
+.banner .left h3 {
+    position: absolute;
+    left: 165px;
+    top: 50px;
+    font-size: 27px;
+}
+.banner .left span {
+    display: block;
+    position: absolute;
+    left: 165px;
+    top: 85px;
+    font-size: 17px;
+    font-family: 'Lobster',cursive;
+}
+
+.banner .right h3 {
+    position: absolute;
+    right: 155px;
+    top: 50px;
+    font-size: 27px;
+
+}
+.banner .right span {
+    display: block;
+    position: absolute;
+    right: 155px;
+    top: 85px;
+    font-size: 17px;
+    font-family: 'Lobster',cursive;
+
+}
+
+
+
+/*.banner .right {*/
+
+/*}*/
+
+
 /* GRID COLUMNS */
 
 .one_half, .one_third, .two_third, .three_fourth, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth, .one_sixth, .five_sixth {
