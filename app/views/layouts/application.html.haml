@@ -33,6 +33,12 @@
                   = yield
                 #content
                   = yield :product_content
+
+          -elsif params[:controller]=='pages'
+            #column-left
+              = render "layouts/column_left"
+            #content.content-column-left
+              = yield
           -else
             #content
               = yield
