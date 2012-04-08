@@ -26,19 +26,19 @@ class Product < ActiveRecord::Base
   end
 
   def self.bestsellers limit
-    where(:published => true).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).limit(limit)
   end
 
-  def self.related limit
-    where(:published => true).limit(limit)
+  def self.related (limit,category_id,except)
+    includes(:category).includes(:attachments).where( :category_id=>category_id,:published => true ).where(["id NOT IN (?)", except]).limit(limit).order("RAND()")
   end
 
   def self.latest limit
-    where(:published => true).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).limit(limit)
   end
 
   def self.featured limit
-    where(:published => true).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).limit(limit)
   end
 
   private

@@ -82,4 +82,4 @@
   .box
     =render :partial => 'reviews'
   .cat_list
-    =render :partial => 'related_products', :locals =>{ :related => Product.related(4) }
+    =render :partial => 'related_products', :locals =>{ :related => Product.related(4,@product.category_id,@product.id) }

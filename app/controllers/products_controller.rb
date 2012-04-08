@@ -1,22 +1,19 @@
 # -*- encoding : utf-8 -*-
 class ProductsController < InheritedResources::Base
   belongs_to :category
-  #actions :index, :show
-end
+    before_filter :get_category
 
-#class ProductsController < InheritedResources::Base
-#
-#  before_filter :get_category_or_author
-#
-#  def get_category_or_author
-#    @category = Category.find(params[:category_id])
-#  end
-#
-#  def index
-#    @products = Product.where(:category_id => @category.id,:published => true)
-#  end
-#
-#  def show
-#    @product = @category.products.where(:published => true).find(params[:id])
-#  end
-#end
+  def get_category
+    @category = Category.find(params[:category_id])
+  end
+
+  def index
+    @products = @category.products.includes(:category).includes(:attachments).where(:published => true)
+  end
+
+  def show
+    @product = @category.products.includes(:attachments).where(:published => true).find(params[:id])
+  end
+
+
+end

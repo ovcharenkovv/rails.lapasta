@@ -1,8 +1,6 @@
 .inner
   %ul.main_menu.menu_left
     %li
-      %a{:href => ""} Мой аккаунт
-    %li
       %a{:href => ""} Информация
     %li
       %a{:href => ""} Главная
@@ -12,11 +10,8 @@
       %img{:alt => "", :src => "/images/logo.png", :title => "logo"}/
   %ul.main_menu.menu_right
     %li
-      %a{:href => ""} Сравнить
-    %li
-      %a{:href => ""} Корзина
-    %li
       %a{:href => ""} На связи
+    %li=link_to "Корзина", cart_url(session[:cart_id])
   -##welcome
   -#  Добро пожаловать
   -#  %a{:href => "account/login"} залогинется
