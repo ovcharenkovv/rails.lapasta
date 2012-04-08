@@ -1,53 +1,73 @@
 %h2.heading-title
   %span Озывы
-.box-content.box-rating{:style => "display: block;"}
-  %a.comment_switch{:href => "#"}
-    %span.button_comments Посмотреть
-    %span.button_review Написать
-  .box-comments
-    .content
-      %span Dimitar Koev | 05/09/2011
-      %img{:alt => "3 reviews", :src => "image/stars-5.png"}
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    .content
-      %span Dimitar Koev | 05/09/2011
-      %img{:alt => "3 reviews", :src => "image/stars-1.png"}
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    .content
-      %span Dimitar Koev | 05/09/2011
-      %img{:alt => "3 reviews", :src => "image/stars-4.png"}
-        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-  .box-write
-    %h3#review-title Write a review
-    %span.label Your Name:
-    %input{:name => "name", :type => "text", :value => ""}
-      %br
-        %br
-          %span.label Your Review:
-          %textarea{:cols => "40", :name => "text", :rows => "10", :style => "width: 98%;"}
-          %span{:style => "font-size: 11px;"}
-            %span{:style => "color: #FF0000;"} Note:
-            HTML is not translated!
-          %br
-            %br
-              %span.label Rating:
-              = succeed "&nbsp;" do
-                %span Bad
-              %input{:name => "rating", :type => "radio", :value => "1"}
-              %input{:name => "rating", :type => "radio", :value => "2"}
-              %input{:name => "rating", :type => "radio", :value => "3"}
-              %input{:name => "rating", :type => "radio", :value => "4"}
-              %input{:name => "rating", :type => "radio", :value => "5"}
-              %span Good
-              %br
-              %br
-              %span.label Enter the code in the box below:
-              %input{:name => "captcha", :type => "text", :value => ""}
-              %br
-              %img#captcha{:alt => "", :src => "image/captcha.jpg"}
-              %br
-              %br
-              .buttons
-                .left
-                  %a#button-review.button
-                    %span Submit Review
+#disqus_thread
+:javascript
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'example'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+%noscript
+  Please enable JavaScript to view the
+  %a{:href => "http://disqus.com/?ref_noscript"} comments powered by Disqus.
+%a.dsq-brlink{:href => "http://disqus.com"}
+  blog comments powered by
+  %span.logo-disqus Disqus
+
+-#%h2.heading-title
+-#  %span Озывы
+-#.box-content.box-rating{:style => "display: block;"}
+-#  %a.comment_switch{:href => "#"}
+-#    %span.button_comments Посмотреть
+-#    %span.button_review Написать
+-#  .box-comments
+-#    .content
+-#      %span Dimitar Koev | 05/09/2011
+-#      %img{:alt => "3 reviews", :src => "image/stars-5.png"}
+-#        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+-#    .content
+-#      %span Dimitar Koev | 05/09/2011
+-#      %img{:alt => "3 reviews", :src => "image/stars-1.png"}
+-#        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+-#    .content
+-#      %span Dimitar Koev | 05/09/2011
+-#      %img{:alt => "3 reviews", :src => "image/stars-4.png"}
+-#        %p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+-#  .box-write
+-#    %h3#review-title Write a review
+-#    %span.label Your Name:
+-#    %input{:name => "name", :type => "text", :value => ""}
+-#      %br
+-#        %br
+-#          %span.label Your Review:
+-#          %textarea{:cols => "40", :name => "text", :rows => "10", :style => "width: 98%;"}
+-#          %span{:style => "font-size: 11px;"}
+-#            %span{:style => "color: #FF0000;"} Note:
+-#            HTML is not translated!
+-#          %br
+-#            %br
+-#              %span.label Rating:
+-#              = succeed "&nbsp;" do
+-#                %span Bad
+-#              %input{:name => "rating", :type => "radio", :value => "1"}
+-#              %input{:name => "rating", :type => "radio", :value => "2"}
+-#              %input{:name => "rating", :type => "radio", :value => "3"}
+-#              %input{:name => "rating", :type => "radio", :value => "4"}
+-#              %input{:name => "rating", :type => "radio", :value => "5"}
+-#              %span Good
+-#              %br
+-#              %br
+-#              %span.label Enter the code in the box below:
+-#              %input{:name => "captcha", :type => "text", :value => ""}
+-#              %br
+-#              %img#captcha{:alt => "", :src => "image/captcha.jpg"}
+-#              %br
+-#              %br
+-#              .buttons
+-#                .left
+-#                  %a#button-review.button
+-#                    %span Submit Review
