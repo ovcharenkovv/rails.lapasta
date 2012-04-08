@@ -11,7 +11,12 @@
   %ul.main_menu.menu_right
     %li
       %a{:href => ""} На связи
-    %li=link_to "Корзина", cart_url(session[:cart_id])
+    %li
+      -if session[:cart_id]
+        =link_to "Корзина", cart_url(session[:cart_id])
+      -else
+        %a{:href => ""} На связи
+
   -##welcome
   -#  Добро пожаловать
   -#  %a{:href => "account/login"} залогинется
