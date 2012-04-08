@@ -41,6 +41,11 @@
 
     });
 
+  %script{:src => "http://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
+  :javascript
+    stLight.options({publisher: "d041975f-b4fe-4c98-988a-e6276b3f4bce"});
+
+
 .left
   .image
     %a#zoom1.cloud-zoom{:href => @product.attachments.first.attachment_url(:large), :rel => "adjustX: 5, adjustY:0, zoomWidth:550, zoomHeight:400, showTitle: false"}
@@ -61,8 +66,15 @@
   -#.cart
     -#%span.label Количество:
     -#%input#qty{:name => "quantity", :size => "2", :type => "text", :value => "1"}
-  = button_to 'Купить', line_items_path(:product_id => @product  ), :class=> 'button-cart'
-  .clear
+  .cart_button
+    = button_to 'Купить', line_items_path(:product_id => @product  ), :class=> 'button-cart important'
+
+  .share_buttons
+    %span.st_vkontakte_hcount{:displayText => "Vkontakte"}
+    %span.st_odnoklassniki_hcount{:displayText => "Odnoklassniki"}
+    %span.st_twitter_hcount{:displayText => "Tweet"}
+    %span.st_fblike_hcount{:displayText => "Facebook Like"}
+
 
 
 

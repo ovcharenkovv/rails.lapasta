@@ -866,7 +866,7 @@ a.button
 {
     background: url("../images/back_button.png") top center no-repeat;
     color: #666;
-    font-size:12px;
+    font-size:14px;
     font-weight:bold;
     display: inline-block;
     height:46px;
@@ -3041,6 +3041,14 @@ img#captcha {
 #sidefeatures #cart .empty {
     padding-top: 50px;
     text-align: center;
+}
+
+.cart_button {
+    border-bottom: 1px solid #E7E7E7;
+    color: #4D4D4D;
+    margin-bottom: 20px;
+    padding: 15px 5px;
+    padding: 15px 5px 25px;
 }
 #sidefeatures #currency, #sidefeatures #language, #sidefeatures #search {
     position: absolute;
