@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
   attr_accessible :title, :category_id, :supplier_id, :published, :price, :supplier_price, :status, :description, :attachments_attributes
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
-  validates :title, :category_id,:price, :presence => true
+  validates :title, :category_id, :supplier_id, :price, :presence => true
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
