@@ -19,13 +19,8 @@ class OrdersController < InheritedResources::Base
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        #Notifier.order_received(@order).deliver
+        Notifier.order_created(@order).deliver
 
-        #if @order.line_items.find_all{ |line_item| line_item.product.category.dealers_only == true }.size != 0
-        #  Notifier.order_dealer_send(@order).deliver
-        #else
-        #  Notifier.order_send(@order).deliver
-        #end
 
         format.html { redirect_to('/content/happy', :notice => 'Пасибки за заказ') }
         format.xml { render :xml => @order, :status => :created,

@@ -1,0 +1,17 @@
+%table
+- line_items.each do |line_item|
+  %tr
+    %td.pic
+      =image_tag (line_item.product.attachments.first.attachment_url(:catalog))
+    %td.title
+      = link_to(line_item.product.title.to_s, "http://109.122.61.5/"+category_product_path(line_item.product.category,line_item.product).to_s)
+      ="("
+      = line_item.product.category.name
+      =")"
+      ="("
+      = line_item.product.supplier.name
+      =")"
+    %td.quantity
+      = line_item.quantity.to_s+" шт."
+    %td.item_price
+      = line_item.total_price.to_s+" грн."

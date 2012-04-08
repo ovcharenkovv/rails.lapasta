@@ -1,0 +1,15 @@
+%h1 Customer made the order:
+%p
+  Имя :#{@order.name}
+  %br
+  Телефон :#{@order.phone}
+  %br
+  Email :#{@order.email}
+  %br
+  Адрес :#{@order.address}
+  %br
+  Способ оплаты :#{@order.pay_type}
+  %br
+  Способ дорставки:#{@order.delivery_type}
+%p Заказано:
+%p= render :template => 'line_items/mail_line_item',:locals => { :line_items => @order.line_items }
