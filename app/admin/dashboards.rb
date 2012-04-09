@@ -1,6 +1,31 @@
 # -*- encoding : utf-8 -*-
 ActiveAdmin::Dashboards.build do
 
+  section "Orders", :priority => 1 do
+    table_for Order.all do
+      column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
+      column("Name", :name)
+      column("Phone", :phone)
+      column("E-mail", :email)
+      column("Address", :address)
+      column("Date", :created_at)
+    end
+  end
+
+
+  section "NewRelic server status", :priority => 2 do
+    div do
+      br
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/47xts25hEfq" width="500" height="200" scrolling="no" frameborder="no"></iframe>}.html_safe
+    end
+
+    div do
+      br
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/bpd16EMpoeH" width="500" height="200" scrolling="no" frameborder="no"></iframe>}.html_safe
+    end
+  end
+
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
