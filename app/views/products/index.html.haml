@@ -2,8 +2,9 @@
   =@category.name
 
 .cat_list.fixed
-  -@products.each do |product|
-    =render :partial => 'product_item', :locals =>{ :product => product }
+  -cache "products_of_category_#{params[:category_id]}}" do
+    -@products.each do |product|
+      =render :partial => 'product_item', :locals =>{ :product => product }
   .clear
 -#.pagination
 -#  .links

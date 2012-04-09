@@ -1,7 +1,8 @@
 # -*- encoding : utf-8 -*-
+#class ProductsController < ApplicationController
 class ProductsController < InheritedResources::Base
   belongs_to :category
-    before_filter :get_category
+  before_filter :get_category
 
   def get_category
     @category = Category.find(params[:category_id])

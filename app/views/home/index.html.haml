@@ -45,48 +45,47 @@
 
 
 
-.box.featured-box
-  %h2.heading-title
-    %span Рекомендуемые товары
-  .box-content
-    %ul#myRoundabout
-      -Product.featured(5).each do |product|
-        %li
-          .prod_holder
-            =link_to (category_product_path(product.category,product)) do
-              =image_tag (product.attachments.first.attachment_url(:on_show)),  :alt => product.category.name+' '+product.title, :title => product.title
-              %h3=product.title
-          %span.pricetag=product.product_price
+-cache 'homepage' do
+  .box.featured-box
+    %h2.heading-title
+      %span Рекомендуемые товары
+    .box-content
+      %ul#myRoundabout
+        -Product.featured(5).each do |product|
+          %li
+            .prod_holder
+              =link_to (category_product_path(product.category,product)) do
+                =image_tag (product.attachments.first.attachment_url(:on_show)),  :alt => product.category.name+' '+product.title, :title => product.title
+                %h3=product.title
+            %span.pricetag=product.product_price
 
-    %a.previous_round{:href => "#"} Приведущий
-    %a.next_round{:href => "#"} Следующий
+      %a.previous_round{:href => "#"} Приведущий
+      %a.next_round{:href => "#"} Следующий
 
+  .box
+    %h2.heading-title
+      %span Добро пожаловать
+    .box-content
+      %p Ита́лия (итал. Italia [iˈtaːlja], официальное название — Италья́нская Респу́блика (итал. Repubblica Italiana)) — государство на юге Европы, в центре Средиземноморья. Название произошло из греческого языка, см. Этимология.        Граничит с Францией на северо-западе (протяжённость границы — 488 км), со Швейцарией (740 км) и Австрией (430 км) — на севере и со Словенией — на северо-востоке (232 км). Также имеет внутренние границы с Ватиканом (3,2 км) и Сан-Марино (39 км).        Занимает Апеннинский полуостров, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.
 
-.box
-  %h2.heading-title
-    %span Добро пожаловать
-  .box-content
-    %p Ита́лия (итал. Italia [iˈtaːlja], официальное название — Италья́нская Респу́блика (итал. Repubblica Italiana)) — государство на юге Европы, в центре Средиземноморья. Название произошло из греческого языка, см. Этимология.        Граничит с Францией на северо-западе (протяжённость границы — 488 км), со Швейцарией (740 км) и Австрией (430 км) — на севере и со Словенией — на северо-востоке (232 км). Также имеет внутренние границы с Ватиканом (3,2 км) и Сан-Марино (39 км).        Занимает Апеннинский полуостров, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.
-.box
-  .banner
-    %div.left
-      %a{:href => "/"}
-        %img{:alt => "", :src => "/images/banner1.jpg"}
-      %h3 Бесплатная доставка
-      %span при сумме чека больше 500 грн
-    %div.right
-      %a{:href => "/"}
-        %img{:alt => "", :src => "/images/banner2.jpg"}
-      %h3 Скидка 25%
-      %span на каждый 5 товар в чеке
+  .box
+    .banner
+      %div.left
+        %a{:href => "/"}
+          %img{:alt => "", :src => "/images/banner1.jpg"}
+        %h3 Бесплатная доставка
+        %span при сумме чека больше 500 грн
+      %div.right
+        %a{:href => "/"}
+          %img{:alt => "", :src => "/images/banner2.jpg"}
+        %h3 Скидка 25%
+        %span на каждый 5 товар в чеке
 
-
-
-.box
-  %h2.heading-title
-    %span Новинки
-  .box-content
-    .box-product.fixed
-      -Product.latest(8).each do |product|
-        =render :partial => 'products/product_item', :locals =>{ :product => product }
-    .clear
+  .box
+    %h2.heading-title
+      %span Новинки
+    .box-content
+      .box-product.fixed
+        -Product.latest(8).each do |product|
+          =render :partial => 'products/product_item', :locals =>{ :product => product }
+      .clear

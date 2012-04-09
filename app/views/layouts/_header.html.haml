@@ -23,22 +23,6 @@
   -#  или
   -#  %a{:href => "account/register"} зареестрироватся
   .menu
-    = render "categories/list"
-    -#%ul#topnav
-    -#  %li
-    -#    %a{:href => ""} Сыры
-    -#  %li
-    -#    %a{:href => ""} Макароны
-    -#  %li
-    -#    %a{:href => ""} Консервированные продукты
-    -#  %li
-    -#    %a{:href => ""} Масло оливковое
-    -#  %li
-    -#    %a{:href => ""} Сладости
-    -#  %li
-    -#    %a{:href => ""} Кофе
-    -#  %li
-    -#    %a{:href => ""} Уксус
-    -#  %li
-    -#    %a{:href => ""} Соусы и приправы
+    -cache 'menu' do
+      = render "categories/list"
   #notification

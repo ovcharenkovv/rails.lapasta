@@ -3,6 +3,11 @@ ActiveAdmin.register Product do
   menu :priority => 30
   form :partial => "admin/products/form"
 
+  controller do
+    cache_sweeper :product_sweeper
+  end
+
+
   index do
     column "Images" do |product|
 

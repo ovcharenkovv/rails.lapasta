@@ -1,13 +1,16 @@
--if params[:controller]=='products'
+-if params[:controller]=='products' && params[:action]=='index'
   .box
     %h3.heading-title
       %span Категории
     .box-content.box-category
-      = render "categories/list"
+      -cache 'menu' do
+        = render "categories/list"
+
   .box
     %h3.heading-title
       %span ТОП продаж
-    = render :partial => 'products/bestsellers', :locals =>{ :bestsellers => Product.bestsellers(3) }
+    -cache "bestsellers_#{params[:category_id]}" do
+      = render :partial => 'products/bestsellers', :locals =>{ :bestsellers => Product.bestsellers(3) }
 -else
   .box
     .box-content.box-category

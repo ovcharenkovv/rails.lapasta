@@ -2,6 +2,10 @@
 ActiveAdmin.register Category do
   menu :priority => 20
 
+  controller do
+    cache_sweeper :category_sweeper
+  end
+
   filter :name
 
   form :partial => "admin/categories/form"
