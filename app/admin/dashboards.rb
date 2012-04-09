@@ -21,7 +21,7 @@ ActiveAdmin::Dashboards.build do
 
     div do
       br
-      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/bpd16EMpoeH" width="500" height="200" scrolling="no" frameborder="no"></iframe>}.html_safe
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/57t1DV5ShKD" width="500" height="300" scrolling="no" frameborder="no"></iframe>}.html_safe
     end
   end
 
