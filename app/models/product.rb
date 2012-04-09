@@ -41,6 +41,15 @@ class Product < ActiveRecord::Base
     includes(:category).includes(:attachments).where(:published => true).limit(limit)
   end
 
+
+  def self.published_products params
+    includes(:category).includes(:attachments).where(:published => true).where( :category_id=>params[:category_id])
+  end
+
+  def self.published_product params
+    includes(:attachments).where(:published => true).where( :category_id=>params[:category_id]).find(params[:id])
+  end
+
   private
   # ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item

@@ -2,18 +2,15 @@
 #class ProductsController < ApplicationController
 class ProductsController < InheritedResources::Base
   belongs_to :category
-  before_filter :get_category
-
-  def get_category
-    @category = Category.find(params[:category_id])
-  end
 
   def index
-    @products = @category.products.includes(:category).includes(:attachments).where(:published => true)
+    @products = Product.published_products(params)
+
   end
 
   def show
-    @product = @category.products.includes(:attachments).where(:published => true).find(params[:id])
+    @product = Product.published_product(params)
+
   end
 
 

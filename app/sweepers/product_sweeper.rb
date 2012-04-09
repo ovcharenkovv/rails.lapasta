@@ -23,6 +23,7 @@ class ProductSweeper < ActionController::Caching::Sweeper
     expire_fragment("bestsellers_#{product.category.id}")
     expire_fragment("related_#{product.id}")
 
+
     #if previous_product = Product.previous_product(product.id,product.category_id)
     #  expire_fragment("product_#{previous_product.category.id}_#{previous_product.id}")
     #end

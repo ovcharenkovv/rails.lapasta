@@ -14,6 +14,16 @@ ActiveAdmin::Dashboards.build do
 
 
   section "NewRelic server status", :priority => 2 do
+
+    div do
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/4avwiQ0VeDH" width="500" height="150" scrolling="no" frameborder="no"></iframe>}.html_safe
+    end
+
+    div do
+      br
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/5zDXL5S3hmz" width="500" height="150" scrolling="no" frameborder="no"></iframe>}.html_safe
+    end
+
     div do
       br
       text_node %{<iframe src="https://rpm.newrelic.com/public/charts/47xts25hEfq" width="500" height="200" scrolling="no" frameborder="no"></iframe>}.html_safe
@@ -21,15 +31,17 @@ ActiveAdmin::Dashboards.build do
 
     div do
       br
-      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/57t1DV5ShKD" width="500" height="300" scrolling="no" frameborder="no"></iframe>}.html_safe
+      text_node %{<iframe src="https://rpm.newrelic.com/public/charts/eX6jbIoyaph" width="500" height="200" scrolling="no" frameborder="no"></iframe>}.html_safe
     end
+
+
   end
 
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
-  
+
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
@@ -40,7 +52,7 @@ ActiveAdmin::Dashboards.build do
   #       end
   #     end
   #   end
-  
+
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
   # easily render a partial rather than build content in ruby.
@@ -50,7 +62,7 @@ ActiveAdmin::Dashboards.build do
   #       render 'recent_posts' # => this will render /app/views/admin/dashboard/_recent_posts.html.erb
   #     end
   #   end
-  
+
   # == Section Ordering
   # The dashboard sections are ordered by a given priority from top left to
   # bottom right. The default priority is 10. By giving a section numerically lower
@@ -60,7 +72,7 @@ ActiveAdmin::Dashboards.build do
   #   section "Recent User", :priority => 1
   #
   # Will render the "Recent Users" then the "Recent Posts" sections on the dashboard.
-  
+
   # == Conditionally Display
   # Provide a method name or Proc object to conditionally render a section at run time.
   #

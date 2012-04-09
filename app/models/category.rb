@@ -8,4 +8,7 @@ class Category < ActiveRecord::Base
   def self.main_menu
     self.where(:published=>true).order(:position).roots
   end
+  def self.category_name params
+    find(params[:category_id]).name
+  end
 end

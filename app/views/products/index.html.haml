@@ -1,5 +1,5 @@
 - content_for :page_title do
-  =@category.name
+  =Category.category_name(params)
 
 .cat_list.fixed
   -cache "products_of_category_#{params[:category_id]}}" do
