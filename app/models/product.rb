@@ -26,7 +26,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.bestsellers (limit ,category_id)
-    includes(:category).includes(:attachments).where(:published => true).where(:category_id=>category_id).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).where(:category_id=>category_id).order("created_at desc").limit(limit)
   end
 
   def self.related (limit,category_id,except)
@@ -34,16 +34,16 @@ class Product < ActiveRecord::Base
   end
 
   def self.latest limit
-    includes(:category).includes(:attachments).where(:published => true).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).order("created_at desc").limit(limit)
   end
 
   def self.featured limit
-    includes(:category).includes(:attachments).where(:published => true).limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).order("created_at desc").limit(limit)
   end
 
 
   def self.published_products params
-    includes(:category).includes(:attachments).where(:published => true).where( :category_id=>params[:category_id])
+    includes(:category).includes(:attachments).where(:published => true).where( :category_id=>params[:category_id]).order("created_at desc")
   end
 
   def self.published_product params
