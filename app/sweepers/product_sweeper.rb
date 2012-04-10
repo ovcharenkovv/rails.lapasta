@@ -18,7 +18,7 @@ class ProductSweeper < ActionController::Caching::Sweeper
 
   def expire_cache_for(product)
     expire_fragment("homepage")
-    expire_fragment("products_of_category_#{params[:category_id]}}")
+    expire_fragment("products_of_category_#{product.category.id}}")
     expire_fragment("product_#{product.id}")
     expire_fragment("bestsellers_#{product.category.id}")
     expire_fragment("related_#{product.id}")
