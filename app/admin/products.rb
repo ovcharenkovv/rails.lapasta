@@ -11,7 +11,7 @@ ActiveAdmin.register Product do
   index do
     column "Images" do |product|
 
-        link_to (admin_product_path(product)) do
+        link_to (edit_admin_product_path(product)) do
           if !product.attachments.first.nil?
             image_tag(product.first_attache_url(:thumb))
           else
