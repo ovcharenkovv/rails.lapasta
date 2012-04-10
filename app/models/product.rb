@@ -26,7 +26,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.bestsellers (limit ,category_id)
-    includes(:category).includes(:attachments).where(:published => true).where(:category_id=>category_id).order("created_at desc").limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).where(:category_id=>category_id).order("RAND()").limit(limit)
   end
 
   def self.related (limit,category_id,except)
