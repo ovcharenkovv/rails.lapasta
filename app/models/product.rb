@@ -25,12 +25,12 @@ class Product < ActiveRecord::Base
     self.price.to_s+' Грн.'
   end
 
-  def self.bestsellers limit
-    includes(:category).includes(:attachments).where(:published => true).limit(limit)
+  def self.bestsellers (limit ,category_id)
+    includes(:category).includes(:attachments).where(:published => true).where(:category_id=>category_id).limit(limit)
   end
 
   def self.related (limit,category_id,except)
-    includes(:category).includes(:attachments).where( :category_id=>category_id,:published => true ).where(["id NOT IN (?)", except]).limit(limit).order("RAND()")
+    includes(:category).includes(:attachments).where(:published => true ).where(:category_id=>category_id).where(["id NOT IN (?)", except]).limit(limit).order("RAND()")
   end
 
   def self.latest limit
