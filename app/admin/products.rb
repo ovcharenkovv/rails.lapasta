@@ -40,6 +40,7 @@ ActiveAdmin.register Product do
       row :category
       row :status
       row :description
+      row :featured
     end
     active_admin_comments
 

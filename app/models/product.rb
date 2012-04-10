@@ -10,7 +10,7 @@ class Product < ActiveRecord::Base
   #has_many :orders, :through => :line_items
 
 
-  attr_accessible :title, :category_id, :supplier_id, :published, :price, :supplier_price, :status, :description, :attachments_attributes
+  attr_accessible :title, :category_id, :supplier_id, :published, :featured, :price, :supplier_price, :status, :description, :attachments_attributes
 
   accepts_nested_attributes_for :attachments, :allow_destroy => true
   validates :title, :category_id, :supplier_id, :price, :presence => true
@@ -38,7 +38,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.featured limit
-    includes(:category).includes(:attachments).where(:published => true).order("created_at desc").limit(limit)
+    includes(:category).includes(:attachments).where(:published => true).where(:featured => true).order("updated_at desc").limit(limit)
   end
 
 
