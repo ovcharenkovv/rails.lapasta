@@ -1215,13 +1215,13 @@ a.compare_button {
     color:#D06464;
 }
 .pricetag_small {
-    background:url(../images/pricetag_small.png) top left no-repeat;
-    display:block;
-    width:109px;
-    height:72px;
-    position:absolute;
-    top:-2px;
-    right:15px;
+    background: url("../images/pricetag_small.png") no-repeat scroll left top transparent;
+    display: block;
+    height: 56px;
+    position: absolute;
+    right: 10px;
+    top: -2px;
+    width: 85px;
     z-index: 960;
 }
 .prod_hold:hover .pricetag_small {
@@ -1234,7 +1234,7 @@ a.compare_button {
     font-size:19px;
     text-shadow: #333 1px 1px 1px;
     display:block;
-    padding-top:15px;
+    padding-top:10px;
     text-align: center;
 }
 .prod_hold .old_price, .product-info .old_price {
@@ -3357,7 +3357,7 @@ img#captcha {
 /**********************************************************************************************************************/
 /**********************************************************************************************************************/
 
-.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat;  background-image: url(tipsy.gif); font:11px "Trebuchet MS", Arial, Helvetica, sans-serif; }
+.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat; background: url("../images/tipsy.gif") no-repeat; font:11px "Trebuchet MS", Arial, Helvetica, sans-serif; }
   .tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
   .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
   .tipsy-north { background-position: top center; }
