@@ -11,4 +11,8 @@ class Attachment < ActiveRecord::Base
     "/system/attachments/#{self.id}/#{style}_#{self.attachment_file_name}"
   end
 
+  def self.photo_not_available
+    "/images/not_available.jpg"
+  end
+
 end

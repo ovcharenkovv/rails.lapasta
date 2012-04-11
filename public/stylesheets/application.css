@@ -1128,6 +1128,8 @@ a.compare_button {
 }
 .prod_hold .image img {
     border:7px solid #fff;
+    height: 180px;
+    width: 180px;
 }
 .prod_hold:hover .image img {
     position:relative;
