@@ -1305,18 +1305,24 @@ a.compare_button {
     width: 100px;
 }
 .product_unit .image {
-    background: url("../images/product_shadow_mini.png") bottom center no-repeat;
+    background: url("../images/product_shadow_mini.png") no-repeat scroll left bottom transparent;
     display: block;
-    margin-bottom:0;
-    padding-bottom:8px;
-    width:74px;
-    height:74px;
-    float:left;
+    float: left;
+    height: 74px;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+    width: 205px;
 }
 .product_unit .image img {
     border: 7px solid #FFFFFF;
+    float: left;
     width: 60px;
 }
+.product_unit .descr {
+    float: left;
+    width: 130px;
+}
+
 .box-product .rating {
     display: block;
     margin-bottom: 4px;

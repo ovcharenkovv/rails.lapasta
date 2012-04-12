@@ -6,6 +6,7 @@
           =image_tag (product.attachments.first.attachment_url(:thumb)),  :alt => product.category.name+' '+product.title, :title => product.title
         -else
           =image_tag (product.attachments.photo_not_available)
-      %span.name=product.title
-      %span.price=product.product_price
+        .descr
+          %span.name=product.title
+          %span.price=product.product_price
   .clear
