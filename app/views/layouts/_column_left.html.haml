@@ -10,7 +10,7 @@
     %h3.heading-title
       %span ТОП продаж
     -cache "bestsellers_#{params[:category_id]}" do
-      = render :partial => 'products/bestsellers', :locals =>{ :bestsellers => Product.bestsellers(3,params[:category_id]) }
+      = render :partial => 'products/bestsellers', :locals =>{ :bestsellers => Product.bestsellers(5,params[:category_id]) }
 -else
   .box
     .box-content.box-category
