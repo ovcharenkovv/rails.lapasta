@@ -1,5 +1,5 @@
 .prod_hold
-  =link_to (category_product_path(product.category,product)),:class=>"wrap_link" do
+  =link_to category_product_path(product.category,product) , :class => "wrap_link" do
     %span.image
       -if !product.attachments.first.nil?
         =image_tag (product.attachments.first.attachment_url(:catalog)),  :alt => product.category.name+' '+product.title, :title => product.title

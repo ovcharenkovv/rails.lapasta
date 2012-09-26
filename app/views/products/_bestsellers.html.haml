@@ -1,7 +1,7 @@
 .box-content
   -bestsellers.each do |product|
     .product_unit
-      =link_to (category_product_path(product.category,product)),:class=>"image" do
+      =link_to category_product_path(product.category,product),:class=>"image" do
         -if !product.attachments.first.nil?
           =image_tag (product.attachments.first.attachment_url(:thumb)),  :alt => product.category.name+' '+product.title, :title => product.title
         -else
